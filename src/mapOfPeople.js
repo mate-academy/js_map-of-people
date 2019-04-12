@@ -41,6 +41,15 @@
  */
 function mapOfPeople(people) {
   // write code here
+  let peopleInRoom = new Map();
+  for (let i = 0; i < people.length; i++) {
+    if (!peopleInRoom.has(people[i])) {
+      peopleInRoom.set(people[i], i);
+    } else {
+      peopleInRoom.delete(people[i]);
+    }
+  };
+  return peopleInRoom;
 }
 
 module.exports = mapOfPeople;
