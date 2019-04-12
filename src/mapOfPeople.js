@@ -29,7 +29,7 @@
  * the Map that you return. For the example above, the correct answer is a Map
  * containing elements 3, 1 (in that order) with map[3] === 1 (as person 3
  * entered at 1 second) and map[1] === 5 (as the last time person 1 entered the
- * room was at 5 seconds). Return an empty map if there are no people in the
+ * room was at 5 seconds). Return an empty map if there are no peopnpmle in the
  * room.
  *
  * mapOfPeople([1, 3, 2, 1, 2, 1]) === Map(2) {3 => 1, 1 => 5}
@@ -40,7 +40,20 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  let peopleInTheRoom = new Map();
+  let count = 0;
+  for (let person of people) {
+    switch (peopleInTheRoom.has(person)) {
+      case false:
+        peopleInTheRoom.set(person, count);
+        count++;
+        break;
+      default:
+        peopleInTheRoom.delete(person);
+        count++;
+    }
+  }
+  return peopleInTheRoom;
 }
 
 module.exports = mapOfPeople;
