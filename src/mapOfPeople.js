@@ -40,7 +40,21 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  let temp = [];
+  let map = new Map();
+
+  people.forEach((item) => {
+    if (temp.includes(item)) {
+      temp.splice(temp.indexOf(item), 1);
+    } else {
+      temp.push(item);
+    }
+  });
+  temp.forEach((item) => {
+    map.set(item, people.lastIndexOf(item));
+  });
+
+  return map;
 }
 
 module.exports = mapOfPeople;
