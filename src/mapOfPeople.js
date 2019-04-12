@@ -41,6 +41,16 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const currentlyInRoom = new Map();
+  let time = 0;
+
+  people.forEach(function(person) {
+    currentlyInRoom.has(person)
+      ? currentlyInRoom.delete(person)
+      : currentlyInRoom.set(person, time);
+    time++;
+  });
+  return currentlyInRoom;
 }
 
 module.exports = mapOfPeople;
