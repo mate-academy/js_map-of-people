@@ -40,7 +40,7 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  let peopleAtTheRoom = new Map();
+  const peopleAtTheRoom = new Map();
   people.forEach((item, seconds) => {
     if (!peopleAtTheRoom.delete(item)) {
       peopleAtTheRoom.set(item, seconds);
