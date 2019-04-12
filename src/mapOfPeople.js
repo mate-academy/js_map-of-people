@@ -41,6 +41,16 @@
  */
 function mapOfPeople(people) {
   // write code here
+  let mapsPeople = new Map();
+  people.forEach((man, time) => {
+    if (mapsPeople.has(man)) {
+      mapsPeople.delete(man);
+    } else {
+      mapsPeople.set(man, time);
+    }
+  });
+
+  return mapsPeople;
 }
 
 module.exports = mapOfPeople;
