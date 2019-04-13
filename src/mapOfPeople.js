@@ -50,7 +50,7 @@ function mapOfPeople(people = []) {
     }
     return uniquePeople;
   }, []);
-  let personWithTimeEntered = new Map();
+  const personWithTimeEntered = new Map();
   uniquePeople.forEach(person => {
     personWithTimeEntered.set(person, people.lastIndexOf(person));
   });
