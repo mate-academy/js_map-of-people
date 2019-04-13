@@ -41,6 +41,17 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const inRoomSet = new Set();
+  const inRoomMap = new Map();
+  people.forEach(
+    person => (inRoomSet.has(person))
+      ? inRoomSet.delete(person)
+      : inRoomSet.add(person)
+  );
+  inRoomSet.forEach(
+    person => inRoomMap.set(person, people.lastIndexOf(person))
+  );
+  return inRoomMap;
 }
 
 module.exports = mapOfPeople;
