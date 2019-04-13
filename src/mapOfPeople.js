@@ -40,20 +40,15 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  let temp = [];
   let map = new Map();
 
-  people.forEach((item) => {
-    if (temp.includes(item)) {
-      temp.splice(temp.indexOf(item), 1);
+  people.forEach((key, item) => {
+    if (map.has(key)) {
+      map.delete(key);
     } else {
-      temp.push(item);
+      map.set(key, item);
     }
   });
-  temp.forEach((item) => {
-    map.set(item, people.lastIndexOf(item));
-  });
-
   return map;
 }
 
