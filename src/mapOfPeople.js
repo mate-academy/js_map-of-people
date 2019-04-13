@@ -41,14 +41,14 @@
  */
 function mapOfPeople(people) {
   // write code here
-  let peopleInRoom = new Map();
-  for (let i = 0; i < people.length; i++) {
-    if (!peopleInRoom.has(people[i])) {
-      peopleInRoom.set(people[i], i);
+  const peopleInRoom = new Map();
+  people.forEach((person, index) => {
+    if (!peopleInRoom.has(person)) {
+      peopleInRoom.set(person, index);
     } else {
-      peopleInRoom.delete(people[i]);
+      peopleInRoom.delete(person);
     }
-  };
+  });
   return peopleInRoom;
 }
 
