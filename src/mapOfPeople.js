@@ -39,8 +39,22 @@
  *
  * @return {Map}
  */
-function mapOfPeople(people) {
-  // write code here
+function mapOfPeople(people = []) {
+  const uniquePeople = people.reduce((uniquePeople, person) => {
+    const positionOfPerson = element => uniquePeople.indexOf(element);
+    if (uniquePeople.includes(person)) {
+      uniquePeople.splice(positionOfPerson(person), 1);
+      return uniquePeople;
+    } else if (positionOfPerson(person) === -1) {
+      uniquePeople.push(person);
+    }
+    return uniquePeople;
+  }, []);
+  let personWithTimeEntered = new Map();
+  uniquePeople.forEach(person => {
+    personWithTimeEntered.set(person, people.lastIndexOf(person));
+  });
+  return personWithTimeEntered;
 }
 
 module.exports = mapOfPeople;
