@@ -42,9 +42,9 @@
 function mapOfPeople(people) {
   const peopleAtTheRoom = new Map();
   people.forEach((item, seconds) => {
-    if (!peopleAtTheRoom.delete(item)) {
+    const hasBeenRemoved = peopleAtTheRoom.delete(item);
+    if (!hasBeenRemoved) {
       peopleAtTheRoom.set(item, seconds);
-      seconds++;
     }
   });
   return peopleAtTheRoom;
