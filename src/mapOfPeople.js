@@ -39,22 +39,18 @@
  *
  * @return {Map}
  */
-function mapOfPeople(people = []) {
-  const uniquePeople = people.reduce((uniquePeople, person) => {
-    const positionOfPerson = element => uniquePeople.indexOf(element);
-    if (uniquePeople.includes(person)) {
-      uniquePeople.splice(positionOfPerson(person), 1);
-      return uniquePeople;
-    } else if (positionOfPerson(person) === -1) {
-      uniquePeople.push(person);
+function mapOfPeople(people) {
+  const uniquePeople = people.reduce((arrayOfPeople, person, currentIndex) => {
+    const positionOfPerson = element => arrayOfPeople.has(element);
+    if (arrayOfPeople.has(person)) {
+      arrayOfPeople.delete(person);
+      return arrayOfPeople;
+    } else if (!positionOfPerson(person)) {
+      arrayOfPeople.set(person, currentIndex);
     }
-    return uniquePeople;
-  }, []);
-  const personWithTimeEntered = new Map();
-  uniquePeople.forEach(person => {
-    personWithTimeEntered.set(person, people.lastIndexOf(person));
-  });
-  return personWithTimeEntered;
+    return arrayOfPeople;
+  }, new Map());
+  return uniquePeople;
 }
 
 module.exports = mapOfPeople;
