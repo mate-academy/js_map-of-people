@@ -41,7 +41,7 @@
  */
 function mapOfPeople(people) {
   let map = new Map();
-  people.map((el, i) => {
+  people.forEach((el, i) => {
     return map.has(el) ? map.delete(el) : map.set(el, i);
   });
   return map;
