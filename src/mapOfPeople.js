@@ -40,15 +40,14 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  const uniquePeople = people.reduce((arrayOfPeople, person, currentIndex) => {
-    const positionOfPerson = element => arrayOfPeople.has(element);
-    if (arrayOfPeople.has(person)) {
-      arrayOfPeople.delete(person);
-      return arrayOfPeople;
-    } else if (!positionOfPerson(person)) {
-      arrayOfPeople.set(person, currentIndex);
+  const uniquePeople = people.reduce((mapOfPeople, person, currentIndex) => {
+    const isPersonInArray = mapOfPeople.has(person);
+    if (isPersonInArray) {
+      mapOfPeople.delete(person);
+      return mapOfPeople;
     }
-    return arrayOfPeople;
+    mapOfPeople.set(person, currentIndex);
+    return mapOfPeople;
   }, new Map());
   return uniquePeople;
 }
