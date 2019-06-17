@@ -41,8 +41,8 @@
  */
 function mapOfPeople(people) {
   const room = new Map();
-  const accounting = (person, index) =>
-    room.has(person) ? room.delete(person) : room.set(person, index);
+  const accounting = (value, key) =>
+    room.has(value) ? room.delete(value) : room.set(value, key);
 
   people.forEach(accounting);
   return room;
