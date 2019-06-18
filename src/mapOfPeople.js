@@ -42,13 +42,14 @@
 function mapOfPeople(people) {
   const resultMap = new Map();
 
-  for (const val in people) {
-    if (!resultMap.has(people[val])) {
-      resultMap.set(people[val], Number(val));
+  for (const key in people) {
+    if (!resultMap.has(people[key])) {
+      resultMap.set(people[key], Number(key));
     } else {
-      resultMap.delete(people[val]);
+      resultMap.delete(people[key]);
     }
   }
+
   return resultMap;
 }
 
