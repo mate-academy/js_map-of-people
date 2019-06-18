@@ -41,14 +41,14 @@
  */
 function mapOfPeople(people) {
   const resultPeoples = new Map();
-  let second = 0;
+  let count = 0;
   for (const item of people) {
     if (!resultPeoples.has(item)) {
-      resultPeoples.set(item, second);
+      resultPeoples.set(item, count);
     } else {
       resultPeoples.delete(item);
     }
-    second++;
+    count++;
   }
 
   return resultPeoples;
