@@ -39,6 +39,7 @@
  *
  * @return {Map}
  */
+
 function mapOfPeople(people) {
   const mapPeople = new Map();
   for (const i in people) {
