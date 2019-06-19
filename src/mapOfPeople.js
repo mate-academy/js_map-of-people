@@ -41,10 +41,10 @@
  */
 function mapOfPeople(people) {
   const result = new Map();
-  let second = 0;
+  let position = 0;
   for (const num of people) {
-    result.has(num) ? result.delete(num) : result.set(num, second);
-    second++;
+    result.has(num) ? result.delete(num) : result.set(num, position);
+    position++;
   }
   return result;
   // write code here
