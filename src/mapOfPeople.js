@@ -40,6 +40,13 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
+  const result = new Map();
+  let position = 0;
+  for (const num of people) {
+    result.has(num) ? result.delete(num) : result.set(num, position);
+    position++;
+  }
+  return result;
   // write code here
 }
 
