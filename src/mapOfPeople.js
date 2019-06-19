@@ -44,7 +44,7 @@ const mapOfPeople = (people) => {
     if (presence.has(people[i])) {
       presence.delete(people[i]);
     } else {
-      presence.set(people[i], +(i));
+      presence.set(people[i], i);
     }
   });
   return presence;
