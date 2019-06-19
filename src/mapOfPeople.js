@@ -40,6 +40,15 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
+  const mapOfPeopleInRoom = new Map();
+  people.forEach((item, index) => {
+    if (mapOfPeopleInRoom.has(item)) {
+      mapOfPeopleInRoom.delete(item);
+    } else {
+      mapOfPeopleInRoom.set(item, index);
+    }
+  });
+  return mapOfPeopleInRoom;
   // write code here
 }
 
