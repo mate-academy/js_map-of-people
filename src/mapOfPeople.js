@@ -43,10 +43,10 @@ const mapOfPeople = (people) => {
   const map = new Map();
 
   people.forEach((item, index) => {
-    if (map.get(item) === undefined) {
-      map.set(item, index);
-    } else {
+    if (map.has(item)) {
       map.delete(item);
+    } else {
+      map.set(item, index);
     }
   });
 
