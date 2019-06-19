@@ -41,13 +41,16 @@
  */
 const mapOfPeople = (people) => {
   const listOfPeople = new Map();
+  let entranceTime = 0;
 
-  for (let i = 0; i < people.length; i++) {
-    if (!listOfPeople.has(people[i])) {
-      listOfPeople.set(people[i], i);
+  for (const person of people) {
+    if (!listOfPeople.has(person)) {
+      listOfPeople.set(person, entranceTime);
     } else {
-      listOfPeople.delete(people[i]);
+      listOfPeople.delete(person);
     }
+
+    entranceTime++;
   }
 
   return listOfPeople;
