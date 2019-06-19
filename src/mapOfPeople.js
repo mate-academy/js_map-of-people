@@ -39,8 +39,21 @@
  *
  * @return {Map}
  */
-function mapOfPeople(people) {
-  // write code here
-}
+const mapOfPeople = (people) => {
+  const listOfPeople = new Map();
+  let entranceTime = 0;
+
+  for (const person of people) {
+    if (!listOfPeople.has(person)) {
+      listOfPeople.set(person, entranceTime);
+    } else {
+      listOfPeople.delete(person);
+    }
+
+    entranceTime++;
+  }
+
+  return listOfPeople;
+};
 
 module.exports = mapOfPeople;
