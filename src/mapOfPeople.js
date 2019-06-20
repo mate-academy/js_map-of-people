@@ -41,7 +41,7 @@
  */
 function mapOfPeople(people) {
   const mapOfPeopleInRoom = new Map();
-  for (const elem in people) {
+  for (let elem = 0; elem < people.length; elem++) {
     if (mapOfPeopleInRoom.has(people[elem])) {
       mapOfPeopleInRoom.delete(people[elem]);
     } else {
