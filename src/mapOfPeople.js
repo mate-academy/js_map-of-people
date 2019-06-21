@@ -41,11 +41,11 @@
  */
 function mapOfPeople(people) {
   const peopleCurrentlyInRoom = new Map();
-  for (let i = 0; i < people.length; i++) {
-    if (peopleCurrentlyInRoom.has(people[i])) {
-      peopleCurrentlyInRoom.delete(people[i]);
+  for (const key in people) {
+    if (peopleCurrentlyInRoom.has(people[key])) {
+      peopleCurrentlyInRoom.delete(people[key]);
     } else {
-      peopleCurrentlyInRoom.set(people[i], i);
+      peopleCurrentlyInRoom.set(people[key], +key);
     }
   }
   return peopleCurrentlyInRoom;
