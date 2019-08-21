@@ -40,7 +40,15 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  return people.reduce((resultMap, item, index) => {
+    if (resultMap.has(item)) {
+      resultMap.delete(item);
+    } else {
+      resultMap.set(item, index);
+    }
+
+    return resultMap;
+  }, new Map());
 }
 
 module.exports = mapOfPeople;
