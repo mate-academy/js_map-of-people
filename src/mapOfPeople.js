@@ -40,11 +40,11 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  return people.reduce((resultMap, item, index) => {
-    if (resultMap.has(item)) {
-      resultMap.delete(item);
+  return people.reduce((resultMap, person, index) => {
+    if (resultMap.has(person)) {
+      resultMap.delete(person);
     } else {
-      resultMap.set(item, index);
+      resultMap.set(person, index);
     }
 
     return resultMap;
