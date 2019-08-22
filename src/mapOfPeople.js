@@ -42,7 +42,7 @@
 function mapOfPeople(people) {
   const mapPeople = new Map();
 
-  people.filter((person, index) => {
+  people.forEach((person, index) => {
     return mapPeople.has(person)
       ? mapPeople.delete(person)
       : mapPeople.set(person, index);
