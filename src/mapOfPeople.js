@@ -40,31 +40,18 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  const set = new Set(people);
-  const peopleInRoom = [];
+  const setOfPeopleInRoom = new Set();
   const resultMap = new Map();
 
-  set.forEach(person => {
-    let counter = 0;
-
-    for (let pos = 0; pos < people.length;) {
-      const foundPos = people.indexOf(person, pos);
-
-      if (foundPos === -1) {
-        break;
-      }
-
-      pos = foundPos + 1;
-      counter++;
-    }
-
-    if (counter % 2 !== 0) {
-      peopleInRoom.push(person);
+  people.forEach(person => {
+    if (setOfPeopleInRoom.has(person)) {
+      setOfPeopleInRoom.delete(person);
+    } else {
+      setOfPeopleInRoom.add(person);
     }
   });
 
-  peopleInRoom
-    .sort((a, b) => people.lastIndexOf(a) - people.lastIndexOf(b))
+  [...setOfPeopleInRoom]
     .forEach(item => {
       resultMap.set(item, people.lastIndexOf(item));
     });
