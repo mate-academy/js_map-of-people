@@ -41,11 +41,13 @@
  */
 function mapOfPeople(people) {
   const mapPeople = new Map();
-  people.filter((item, index) => {
-    return mapPeople.has(item)
-      ? mapPeople.delete(item)
-      : mapPeople.set(item, index);
+
+  people.filter((person, index) => {
+    return mapPeople.has(person)
+      ? mapPeople.delete(person)
+      : mapPeople.set(person, index);
   });
+
   return mapPeople;
 }
 
