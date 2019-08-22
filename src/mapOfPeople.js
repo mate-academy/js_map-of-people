@@ -45,7 +45,7 @@ function mapOfPeople(people) {
   people.forEach(person =>
     mapPeople.has(person)
       ? mapPeople.delete(person)
-      : mapPeople.set(person, people.lastIndexOf(person))
+      : mapPeople.set(person, index)
   );
   return mapPeople;
 }
