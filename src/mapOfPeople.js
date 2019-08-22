@@ -41,13 +41,13 @@
  */
 function mapOfPeople(people) {
   const resultMap = new Map();
-  for (let i = 0; i < people.length; i++) {
-    if (resultMap.has(people[i]) === true) {
-      resultMap.delete(people[i]);
+  people.forEach(function(item, index) {
+    if (resultMap.has(item) === true) {
+      resultMap.delete(item);
     } else {
-      resultMap.set(people[i], i);
+      resultMap.set(item, index);
     }
-  }
+  });
   return resultMap;
 }
 
