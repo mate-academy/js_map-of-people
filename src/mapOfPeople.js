@@ -40,21 +40,15 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  const setOfPeopleInRoom = new Set();
   const resultMap = new Map();
 
-  people.forEach(person => {
-    if (setOfPeopleInRoom.has(person)) {
-      setOfPeopleInRoom.delete(person);
+  people.forEach((person, index) => {
+    if (resultMap.has(person)) {
+      resultMap.delete(person);
     } else {
-      setOfPeopleInRoom.add(person);
+      resultMap.set(person, index);
     }
   });
-
-  [...setOfPeopleInRoom]
-    .forEach(item => {
-      resultMap.set(item, people.lastIndexOf(item));
-    });
 
   return resultMap;
 }
