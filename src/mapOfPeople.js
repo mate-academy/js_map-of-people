@@ -42,11 +42,11 @@
 function mapOfPeople(people) {
   const peopleInRoom = new Map();
 
-  people.forEach((item, index) => {
-    if (peopleInRoom.has(item)) {
-      peopleInRoom.delete(item);
+  people.forEach((person, index) => {
+    if (peopleInRoom.has(person)) {
+      peopleInRoom.delete(person);
     } else {
-      peopleInRoom.set(item, index);
+      peopleInRoom.set(person, index);
     }
   });
 
