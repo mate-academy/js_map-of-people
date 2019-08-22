@@ -38,9 +38,17 @@
  * @param {number[]} people
  *
  * @return {Map}
- */
+*/
 function mapOfPeople(people) {
-  // write code here
+  const mapPeopleInRoom = new Map();
+
+  people.forEach(person => {
+    mapPeopleInRoom.has(person)
+      ? mapPeopleInRoom.delete(person)
+      : mapPeopleInRoom.set(person, people.lastIndexOf(person));
+  });
+
+  return mapPeopleInRoom;
 }
 
 module.exports = mapOfPeople;
