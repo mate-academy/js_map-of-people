@@ -41,9 +41,9 @@
  */
 function mapOfPeople(people) {
   const peopleMap = new Map();
-  people.forEach((item, index) => {
-    peopleMap.has(item) === true ? peopleMap.delete(item)
-      : peopleMap.set(item, index);
+  people.forEach((man, index) => {
+    peopleMap.has(man) === true ? peopleMap.delete(man)
+      : peopleMap.set(man, index);
   });
 
   return peopleMap;
