@@ -41,10 +41,10 @@
  */
 function mapOfPeople(people) {
   const map = new Map();
-  people.forEach(item =>
-    map.has(item)
-      ? map.delete(item)
-      : map.set(item, people.lastIndexOf(item)));
+  people.forEach(person =>
+    map.has(person)
+      ? map.delete(person)
+      : map.set(person, people.lastIndexOf(person)));
 
   return map;
 }
