@@ -40,27 +40,15 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  const set = new Set(people);
-  let key = 0;
-  const map = new Map();
-  let inOut = 0;
-
-  for (const value of set) {
-    for (let i = 0; i < people.length; i++) {
-      if (value === people[i]) {
-        inOut++;
-        people[i] = '';
-        key = i;
-      }
-    }
-    if (inOut % 2 !== 0) {
-      map.set(value, key);
-    }
-    inOut = 0;
-  }
-  const mapSort = new Map([...map.entries()].sort((a, b) => a[1] - b[1]));
-
-  return mapSort;
+  const peopleInRoom = new Map();
+  let index = 0;
+  people.forEach((inOut) => {
+    peopleInRoom.has(inOut)
+      ? peopleInRoom.delete(inOut)
+      : peopleInRoom.set(inOut, index);
+    index++;
+  });
+  return peopleInRoom;
 }
 
 module.exports = mapOfPeople;
