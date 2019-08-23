@@ -42,10 +42,10 @@
 function mapOfPeople(people) {
   const peopleInRoom = new Map();
 
-  people.forEach((guest, index) => {
-    peopleInRoom.has(guest)
-      ? peopleInRoom.delete(guest)
-      : peopleInRoom.set(guest, index);
+  people.forEach((person, index) => {
+    peopleInRoom.has(person)
+      ? peopleInRoom.delete(person)
+      : peopleInRoom.set(person, index);
   });
 
   return peopleInRoom;
