@@ -40,16 +40,12 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
   const mapPeople = new Map();
 
-  for (let i = 0; i < people.length; i++) {
-    if (mapPeople.has(people[i])) {
-      mapPeople.delete(people[i]);
-    } else {
-      mapPeople.set(people[i], i);
-    }
-  }
+  people.forEach((person, index) => mapPeople.has(person)
+    ? mapPeople.delete(person)
+    : mapPeople.set(person, index)
+  );
 
   return mapPeople;
 }
