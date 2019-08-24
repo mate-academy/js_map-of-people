@@ -40,7 +40,16 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
-}
+  const result = new Map();
+  people.forEach((person, index) => {
+    if (result.has(person, index)) {
+      result.delete(person, index);
+    } else {
+      result.set(person, index);
+    }
+  });
+
+  return result;
+};
 
 module.exports = mapOfPeople;
