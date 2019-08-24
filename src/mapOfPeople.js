@@ -46,6 +46,7 @@ function mapOfPeople(people) {
       ? peopleInRoom.delete(men)
       : peopleInRoom.set(men, index);
   });
+
   return peopleInRoom;
 }
 
