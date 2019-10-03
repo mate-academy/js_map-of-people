@@ -48,7 +48,6 @@ function mapOfPeople(peopleList) {
     if (map.has(item)) {
       map.delete(item);
     } else {
-      a++
       map.set(item, i);
     }
   });
