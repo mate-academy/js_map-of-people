@@ -41,14 +41,12 @@
  */
 function mapOfPeople(people) {
   const result = new Map();
-  let time = 0;
-  people.forEach(person => {
+  people.forEach((person, index) => {
     if (result.get(person) === undefined) {
-      result.set(person, time);
+      result.set(person, index);
     } else {
       result.delete(person);
     }
-    time++;
   });
   return result;
 }
