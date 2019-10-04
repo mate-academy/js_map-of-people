@@ -42,22 +42,13 @@
 function mapOfPeople(people) {
   const map = new Map();
   for (let i = 0; i < people.length; i++) {
-    const [key, value] = [people[i], i];
-    map.set(key, value);
-  }
-  for (let i = 0; i < people.length; i++) {
-    const positOfSimillar = people.indexOf(people[i], i + 1);
-    if (positOfSimillar > 0) {
-      people.splice(i, 1);
-      people.splice(positOfSimillar - 1, 1);
-      --i;
+    if (map.has(people[i])) {
+      map.delete(people[i]);
+    } else {
+      map.set(people[i], i);
     }
   }
-  const resMap = new Map();
-  for (let i = 0; i < people.length; i++) {
-    resMap.set(people[i], map.get(people[i]));
-  }
-  return resMap;
+  return map;
 }
 
 module.exports = mapOfPeople;
