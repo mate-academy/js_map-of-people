@@ -41,18 +41,14 @@
  */
 function mapOfPeople(people) {
   const map = new Map();
-  if (people.length === 0) {
-    return map;
-  } else {
-    for (let i = 0; i < people.length; i++) {
-      if (map.has(people[i])) {
-        map.delete(people[i]);
-      } else {
-        map.set(people[i], i);
-      }
+  for (let i = 0; i < people.length; i++) {
+    if (map.has(people[i])) {
+      map.delete(people[i]);
+    } else {
+      map.set(people[i], i);
     }
-    return map;
   }
+  return map;
 }
 
 module.exports = mapOfPeople;
