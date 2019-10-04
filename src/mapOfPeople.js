@@ -42,8 +42,13 @@
 function mapOfPeople(people) {
   const room = new Map();
 
-  people.forEach((person, time) => room.has(person)
-    ? room.delete(person) : room.set(person, time));
+  people.forEach((person, time) => {
+    if (room.has(person)) {
+      room.delete(person);
+    } else {
+      room.set(person, time);
+    }
+  });
 
   return room;
 }
