@@ -43,7 +43,7 @@ function mapOfPeople(people) {
   const mapPeople = new Map();
 
   people.forEach((person) => {
-    if (mapPeople.get(person)) {
+    if (mapPeople.has(person)) {
       mapPeople.delete(person);
     } else {
       mapPeople.set(person, people.lastIndexOf(person));
