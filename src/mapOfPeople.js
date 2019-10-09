@@ -40,16 +40,13 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
-  let seconds = 0;
   const room = new Map();
-  for (const person of people) {
-    if (room.has(person)) {
-      room.delete(person);
+  for (let i = 0; i < people.length; i++) {
+    if (room.has(people[i])) {
+      room.delete(people[i]);
     } else {
-      room.set(person, seconds);
+      room.set(people[i], i);
     }
-    seconds++;
   }
   return room;
 }
