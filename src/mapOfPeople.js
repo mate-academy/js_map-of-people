@@ -40,7 +40,13 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  const room = new Map();
+
+  people.forEach(
+    (x, i) => room.has(x) ? room.delete(x) : room.set(x, i)
+  );
+
+  return room;
 }
 
 module.exports = mapOfPeople;
