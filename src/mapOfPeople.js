@@ -43,31 +43,18 @@ function mapOfPeople(people) {
   const mapOfAllPeople = new Map();
   people.forEach((elem, index) => { return mapOfAllPeople.set(elem, index); });
 
-  const peopleHere = people.filter(function(unicPerson) {
-    if (people.filter(function(person) {
-      if (person === unicPerson) {
-        return true;
-      }
-      return false;
-    }).length % 2 > 0) {
-      return true;
-    }
-    return false;
-  });
-
-  const fileterdPeople = [];
-  for (let i = peopleHere.length - 1; i > -1; i--) {
-    if (!fileterdPeople.includes(peopleHere[i])) {
-      fileterdPeople.push(peopleHere[i]);
-    };
+  const setOfAllPeople = new Set();
+  for (let i = 0; i < people.length; i++) {
+    if (setOfAllPeople.has(people[i])) {
+      setOfAllPeople.delete(people[i]);
+    } else { setOfAllPeople.add(people[i]); }
   }
 
-  const arrayOffilteredPeople = fileterdPeople.reverse();
   const mapOfPeopleKeys = new Map();
-  for (let i = 0; i < arrayOffilteredPeople.length; i++) {
+  for (let i = 0; i < [...setOfAllPeople].length; i++) {
     mapOfPeopleKeys
-      .set(arrayOffilteredPeople[i],
-        mapOfAllPeople.get(arrayOffilteredPeople[i]));
+      .set([...setOfAllPeople][i],
+        mapOfAllPeople.get([...setOfAllPeople][i]));
   }
   return mapOfPeopleKeys;
 }
