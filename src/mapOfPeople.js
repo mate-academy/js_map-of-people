@@ -41,22 +41,14 @@
  */
 function mapOfPeople(people) {
   const mapOfAllPeople = new Map();
-  people.forEach((elem, index) => { return mapOfAllPeople.set(elem, index); });
 
-  const setOfAllPeople = new Set();
-  for (let i = 0; i < people.length; i++) {
-    if (setOfAllPeople.has(people[i])) {
-      setOfAllPeople.delete(people[i]);
-    } else { setOfAllPeople.add(people[i]); }
+  for (let elem = 0; elem < people.length; elem++) {
+    if (mapOfAllPeople.has(people[elem])) {
+      mapOfAllPeople.delete(people[elem]);
+    } else { mapOfAllPeople.set(people[elem], elem); }
   }
 
-  const mapOfPeopleKeys = new Map();
-  for (let i = 0; i < [...setOfAllPeople].length; i++) {
-    mapOfPeopleKeys
-      .set([...setOfAllPeople][i],
-        mapOfAllPeople.get([...setOfAllPeople][i]));
-  }
-  return mapOfPeopleKeys;
+  return mapOfAllPeople;
 }
 
 module.exports = mapOfPeople;
