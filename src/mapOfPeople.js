@@ -50,12 +50,6 @@ function mapOfPeople(people) {
     }
   });
 
-  // eslint-disable-next-line no-console
-  console.log(
-    [...result.keys()],
-    [...result.values()]
-  );
-
   return result;
 }
 
