@@ -42,11 +42,11 @@
 function mapOfPeople(people) {
   const map = new Map();
 
-  people.forEach((person, second) => {
-    if (!map.has(person)) {
-      map.set(person, second);
-    } else {
+  people.forEach((person, index) => {
+    if (map.has(person)) {
       map.delete(person);
+    } else {
+      map.set(person, index);
     }
   });
 
