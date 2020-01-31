@@ -42,13 +42,9 @@
 function mapOfPeople(people) {
   const room = new Map();
 
-  for (let i = 0; i < people.length; i++) {
-    if (room.has(people[i])) {
-      room.delete(people[i]);
-    } else {
-      room.set(people[i], i);
-    }
-  }
+  people.forEach((item, index) =>
+    room.has(item) ? room.delete(item) : room.set(item, index)
+  );
 
   return room;
 }
