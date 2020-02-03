@@ -48,8 +48,6 @@ function mapOfPeople(people) {
     } else {
       myMap.set(element, index);
     }
-
-    return myMap;
   });
 
   return myMap;
