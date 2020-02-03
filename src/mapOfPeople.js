@@ -43,10 +43,10 @@ function mapOfPeople(people) {
   const room = new Map();
 
   for (let i = 0; i < people.length; i++) {
-    if (!room.has(people[i])) {
-      room.set(people[i], i);
-    } else {
+    if (room.has(people[i])) {
       room.delete(people[i]);
+    } else {
+      room.set(people[i], i);
     }
   }
 
