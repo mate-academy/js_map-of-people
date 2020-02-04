@@ -41,16 +41,12 @@
  */
 function mapOfPeople(people) {
   const personsInRoom = new Map();
-  let count = 0;
 
-  for (const item of people) {
-    if (!personsInRoom.has(item)) {
-      personsInRoom.set(item, count);
-    } else {
-      personsInRoom.delete(item);
-    }
-    count += 1;
-  }
+  people.forEach((person, item) => {
+    personsInRoom.has(person)
+      ? personsInRoom.delete(person)
+      : personsInRoom.set(person, item);
+  });
 
   return personsInRoom;
 }
