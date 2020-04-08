@@ -42,7 +42,7 @@
 function mapOfPeople(people) {
   const result = new Map();
 
-  people.map((pesron, time) => {
+  people.forEach((pesron, time) => {
     if (result.has(pesron)) {
       result.delete(pesron);
     } else {
