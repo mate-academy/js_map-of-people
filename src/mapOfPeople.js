@@ -41,24 +41,17 @@
  */
 function mapOfPeople(people) {
   // write code here
-  const peopleMap = new Map();
-  const inRoom = new Set();
+  const inRoom = new Map();
 
   for (let i = 0; i < people.length; i++) {
     if (!inRoom.has(people[i])) {
-      inRoom.add(people[i]);
+      inRoom.set(people[i], i);
     } else {
       inRoom.delete(people[i]);
     }
   }
 
-  for (const person of inRoom) {
-    const timeValue = people.lastIndexOf(person);
-
-    peopleMap.set(person, timeValue);
-  }
-
-  return peopleMap;
+  return inRoom;
 }
 
 module.exports = mapOfPeople;
