@@ -40,7 +40,14 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  const peopleInside = new Map();
+
+  people.forEach((person, i) => peopleInside.has(person)
+    ? peopleInside.delete(person)
+    : peopleInside.set(person, i)
+  );
+
+  return peopleInside;
 }
 
 module.exports = mapOfPeople;
