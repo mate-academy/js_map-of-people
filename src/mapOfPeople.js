@@ -42,13 +42,13 @@
 function mapOfPeople(people) {
   const result = new Map();
 
-  for (let i = 0; i < people.length; i++) {
-    if (!result.has(people[i])) {
-      result.set(people[i], i);
+  people.forEach((unit, i) => {
+    if (!result.has(unit)) {
+      result.set(unit, i);
     } else {
-      result.delete(people[i]);
+      result.delete(unit);
     }
-  }
+  });
 
   return result;
 }
