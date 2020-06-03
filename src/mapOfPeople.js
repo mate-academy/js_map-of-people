@@ -41,8 +41,9 @@
  */
 function mapOfPeople(people) {
   const room = new Map();
+  const iterator = people.entries();
 
-  for (const [second, person] of people.entries()) {
+  for (const [second, person] of iterator) {
     !room.has(person)
       ? room.set(person, second)
       : room.delete(person);
