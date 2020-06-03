@@ -42,11 +42,11 @@
 function mapOfPeople(people) {
   const map = new Map();
 
-  for (let i = 0; i < people.length; i++) {
-    if (map.has(people[i])) {
-      map.delete(people[i]);
+  for (const person of people) {
+    if (map.has(person)) {
+      map.delete(person);
     } else {
-      map.set(people[i], people.lastIndexOf(people[i]));
+      map.set(person, people.lastIndexOf(person));
     };
   };
 
