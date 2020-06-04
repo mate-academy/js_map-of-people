@@ -40,7 +40,22 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  const map = new Map();
+
+  for (const person of people) {
+    if (!map.has(person)) {
+      map.set(person, people.lastIndexOf(person));
+    } else {
+      map.delete(person);
+    }
+  }
+
+  return map;
 }
+
+// eslint-disable-next-line no-console
+console.log(mapOfPeople(
+  [7, 6, 8, 7, 5, 0, 3, 4, 4, 5, 5, 0, 0, 5, 7, 6, 0, 0, 8, 8]
+));
 
 module.exports = mapOfPeople;
