@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 /**
@@ -40,7 +41,17 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  const enteredPeople = new Map();
+
+  for (let i = 0; i < people.length; i++) {
+    if (enteredPeople.has(people[i])) {
+      enteredPeople.delete(people[i]);
+    } else {
+      enteredPeople.set(people[i], i);
+    }
+  }
+
+  return enteredPeople;
 }
 
 module.exports = mapOfPeople;
