@@ -47,7 +47,7 @@ function mapOfPeople(people) {
     if (!peopleInRoom.has(person)) {
       peopleInRoom.set(person, counter);
     } else {
-      peopleInRoom.delete(person, counter);
+      peopleInRoom.delete(person);
     }
     counter++;
   }
