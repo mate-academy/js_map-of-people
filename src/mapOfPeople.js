@@ -35,12 +35,18 @@
  * mapOfPeople([1, 3, 2, 1, 2, 1]) === Map(2) {3 => 1, 1 => 5}
  * mapOfPeople([1, 1]) === Map(0) {}
  *
- * @param {number[]} people
+ * @param {number[]} people array of people who have entered the room.
  *
- * @return {Map}
+ * @return {Map} a Map object that contains the people currently in the room.
  */
 function mapOfPeople(people) {
-  // write code here
+  const result = new Map();
+
+  people.forEach((person, index) => result.has(person)
+    ? result.delete(person)
+    : result.set(person, index));
+
+  return result;
 }
 
 module.exports = mapOfPeople;
