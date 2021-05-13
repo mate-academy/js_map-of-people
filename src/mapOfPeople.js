@@ -41,6 +41,13 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const result = new Map();
+
+  people.map(el => result.has(el)
+    ? result.delete(el)
+    : result.set(el, people.lastIndexOf(el)));
+
+  return result;
 }
 
 module.exports = mapOfPeople;
