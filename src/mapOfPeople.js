@@ -43,9 +43,9 @@ function mapOfPeople(people) {
   // write code here
   const result = new Map();
 
-  people.map(el => result.has(el)
+  people.map((el, i) => result.has(el)
     ? result.delete(el)
-    : result.set(el, people.lastIndexOf(el)));
+    : result.set(el, i));
 
   return result;
 }
