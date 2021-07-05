@@ -40,7 +40,16 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  const uniquePeople = people.reduce((mapOfPeople, person, currentIndex) => {
+    const isPersonInArray = mapOfPeople.has(person);
+    if (isPersonInArray) {
+      mapOfPeople.delete(person);
+      return mapOfPeople;
+    }
+    mapOfPeople.set(person, currentIndex);
+    return mapOfPeople;
+  }, new Map());
+  return uniquePeople;
 }
 
 module.exports = mapOfPeople;
