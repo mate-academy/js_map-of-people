@@ -41,6 +41,14 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const personsInRoom = new Map();
+  for (const [index, person] of people.entries()) {
+    if (personsInRoom.has(person)) {
+      personsInRoom.delete(person);
+    } else {
+      personsInRoom.set(person, index);
+    }
+  }
+  return personsInRoom;
 }
-
 module.exports = mapOfPeople;
