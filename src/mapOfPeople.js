@@ -41,6 +41,17 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const cloub = new Map();
+
+  people.forEach((pers, dur) => {
+    if (cloub.has(pers)) {
+      cloub.delete(pers);
+    } else {
+      cloub.set(pers, dur);
+    }
+  });
+
+  return cloub;
 }
 
 module.exports = mapOfPeople;
