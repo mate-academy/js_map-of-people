@@ -1,4 +1,7 @@
 {
+  "jest": {
+    "testEnvironment": "node"
+  },
   "name": "map-of-people",
   "version": "1.0.0",
   "description": "Map of people",
