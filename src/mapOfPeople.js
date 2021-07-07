@@ -41,6 +41,16 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const accumOfPeople = new Map();
+  for (let i = 0; i < people.length; i++) {
+    if (accumOfPeople.has(people[i])) {
+      accumOfPeople.delete(people[i]);
+    } else {
+      accumOfPeople.set(people[i], i);
+    }
+  }
+
+  return accumOfPeople;
 }
 
 module.exports = mapOfPeople;
