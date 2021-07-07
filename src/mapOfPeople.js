@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Implement mapOfPeople function:
  *
@@ -39,8 +38,15 @@
  *
  * @return {Map}
  */
-function mapOfPeople(people) {
-  // write code here
-}
-
+const mapOfPeople = (people) => {
+  const presence = new Map();
+  people.forEach((elem, i) => {
+    if (presence.has(people[i])) {
+      presence.delete(people[i]);
+    } else {
+      presence.set(people[i], i);
+    }
+  });
+  return presence;
+};
 module.exports = mapOfPeople;
