@@ -41,6 +41,16 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const whoIsThere = new Map();
+  for (let i = 0; i < people.length; i++) {
+    if (whoIsThere.has(people[i])) {
+      whoIsThere.delete(people[i]);
+    } else {
+      whoIsThere.set(people[i], i);
+    }
+  }
+
+  return whoIsThere;
 }
 
 module.exports = mapOfPeople;
