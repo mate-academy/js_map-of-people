@@ -40,7 +40,15 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  // write code here\
+  return people.reduce(function(prev, curr, i) {
+    if (!prev.has(curr)) {
+      prev.set(curr, i);
+    } else {
+      prev.delete(curr);
+    }
+    return prev;
+  }, new Map());
 }
 
 module.exports = mapOfPeople;
