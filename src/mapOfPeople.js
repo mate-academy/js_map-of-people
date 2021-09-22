@@ -41,6 +41,19 @@
  */
 function mapOfPeople(people) {
   // write code here
+  const result = new Map();
+
+  for (let i = 0; i < people.length; i++) {
+    const countPerson = people[i];
+
+    if (result.get(countPerson) !== undefined) {
+      result.delete(countPerson);
+    } else {
+      result.set(countPerson, i);
+    }
+  }
+
+  return result;
 }
 
 module.exports = mapOfPeople;
