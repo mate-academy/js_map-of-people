@@ -46,7 +46,7 @@ function mapOfPeople(people) {
   for (let i = 0; i < people.length; i++) {
     const countPerson = people[i];
 
-    if (result.get(countPerson) !== undefined) {
+    if (result.has(countPerson)) {
       result.delete(countPerson);
     } else {
       result.set(countPerson, i);
