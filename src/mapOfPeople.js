@@ -46,11 +46,11 @@ function mapOfPeople(people) {
   for (let i = 0; i < people.length; i++) {
     const countPerson = people[i];
 
-    if (result.has(countPerson)) {
-      result.delete(countPerson);
-    } else {
-      result.set(countPerson, i);
-    }
+    result.has(countPerson) ? (
+      result.delete(countPerson)
+    ) : (
+      result.set(countPerson, i)
+    );
   }
 
   return result;
