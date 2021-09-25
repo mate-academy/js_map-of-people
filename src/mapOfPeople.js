@@ -40,7 +40,21 @@
  * @return {Map}
  */
 function mapOfPeople(people) {
-  // write code here
+  const stayed = new Map();
+
+  people.forEach(human => {
+    const entryOutTimes = people.filter(person => person === human).length;
+
+    if (entryOutTimes % 2 !== 0 || entryOutTimes === 1) {
+      const timeEntry = people.lastIndexOf(human);
+
+      stayed.set(human, timeEntry);
+    }
+  });
+
+  const stayedSort = new Map([...stayed.entries()].sort((a, b) => a[1] - b[1]));
+
+  return stayedSort;
 }
 
 module.exports = mapOfPeople;
